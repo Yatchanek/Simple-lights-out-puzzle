@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --tile-color: #2F0505;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+
+#start-button {
+    width: 60%;
+    height: 5vh;
+    outline: none;
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#start-button:hover {
+    cursor: pointer;
+}
+
+#color-picker {   
+    width: 20%;
+    height: 5%;
+}
+
+#row-count {
+    height: 5vh;
+    width: 30%;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+#win-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40vw;
+    height: 20vh;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 10;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+    pointer-events: none;
+}
+
+.controls {
+    border-right: 1px solid #AAA;
+    display: flex;
+    padding: 20px;
+    margin: 20px 0;
+    max-height: 100vh;
+    flex-direction: column;
+    flex-grow: 3;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+}
+
+
+.container {
+    display: flex;
+    flex-grow: 5;
+    padding: 0 1vmin;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.board-container {  
+    display: grid;
+    column-gap: 2px;
+    row-gap: 2px;
+    transition: all 2s ease-in-out;
+}
+
+.cell {
+    border: 1px solid black;
+    background-color: rgb(205, 205, 205);
+    transition: all 0.5s ease-in-out; 
+    border-radius: 5px;
+}
+
+.cell:hover {
+    opacity: 0.8;
+
+}
+
+.on {
+    background-color: var(--tile-color);
+    transform: rotateY(180deg);
+}
+
+.transparent {
+    opacity: 0;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .controls {
+        flex-direction: row;
+        flex-grow: 1;
+        border-bottom: 1px solid #AAA;
+        border-right: none;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    #start-button {
+        width: 30%;
+        margin: 0 1rem;
+        font-size: 1rem;
+    }
+
+    #row-count {
+        width: 15%;
+        font-size: 1rem;
+        margin-bottom: 0;
+        margin-right: 1rem;
+    }
+
+    #color-picker {
+        width: 10%;
+        height: 50%;
+    }
+    
+    h1 {
+        font-size: 1rem;
+    }
+    
+}
